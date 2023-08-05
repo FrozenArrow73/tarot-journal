@@ -43,3 +43,18 @@
   text-shadow: 0 0 5px currentColor;
   box-shadow: 0 0 5px 0px #B9BAA3;
 }
+
+.authHeader {
+  height: 100px;
+  color: #D6D5C9;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.authSpacer {
+  background-color: rgba(0, 0, 0, 0);
+  width: 70px;
+  height: 35px;
+}

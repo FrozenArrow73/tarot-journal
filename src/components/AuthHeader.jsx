@@ -8,9 +8,9 @@ function AuthHeader() {
     }
   return (
     <header className='authHeader'>
-        <button className='rtnHome' onClick={handleRtnHome}>{"<"}</button>
+        <button className='authButton' onClick={handleRtnHome}>{"Home"}</button>
         <h1 onClick={handleRtnHome}>My Tarot Journal</h1>
-        <div/>
+        <div className='authSpacer'/>
     </header>
   )
 }

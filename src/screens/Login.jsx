@@ -9,7 +9,7 @@ function Login() {
       <AuthHeader/>
       <body className='authBody'>
         <AuthCard>
-          
+
         </AuthCard>
       </body>
     </Background>
