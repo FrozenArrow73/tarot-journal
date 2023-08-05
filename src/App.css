@@ -1,5 +1,6 @@
-.homeBackground {
+.background {
   background-image: linear-gradient(45deg, darkviolet, 40%, black);
+  min-height: 100vh;
 }
 .homeHeader {
   height: 100px;
