@@ -2,6 +2,7 @@
   background-image: linear-gradient(45deg, darkviolet, 40%, black);
   min-height: 100vh;
 }
+
 .homeHeader {
   height: 100px;
   color: #D6D5C9;
@@ -10,11 +11,13 @@
   align-items: center;
   justify-content: space-evenly;
 }
+
 .homeBody {
   min-height: calc(100vh - 100px);
   height: auto;
   padding: 15px;
 }
+
 .homeContainer {
   color: #D6D5C9;
   display: flex;
@@ -36,6 +39,7 @@
   border-color: #D6D5C9;
   color: #D6D5C9;
 }
+
 .authButton:hover {
   cursor: pointer;
   border-color: #B9BAA3;
@@ -57,4 +61,37 @@
   background-color: rgba(0, 0, 0, 0);
   width: 70px;
   height: 35px;
+}
+
+.authBody {
+  min-height: calc(100vh - 100px);
+  height: auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.authCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid;
+  max-width: 400px;
+  gap: 10px;
+  padding: 30px;
+}
+
+.loginRegisterSwitch {
+  background-color: rgba(0, 0, 0, 0);
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+
+.loginRegisterSwitch:hover {
+  border-bottom: solid;
+  cursor: pointer;
 }

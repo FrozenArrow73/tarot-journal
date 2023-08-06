@@ -13,9 +13,9 @@ function Register() {
           <input type='email' id='registerEmail' placeholder='youremail@website.com'></input>
           <label htmlFor='registerPassword'>Password</label>
           <input type='password' id='registerPassword' placeholder='password'></input>
-          <label htmlFor="reenterPassword">Reenter Password</label>
-          <input type="password" placeholder='reenter password'/>
-          <button type='submit' className='authSubmit'>Register</button>
+          <label htmlFor="reenterPassword">Re-enter Password</label>
+          <input type="password" placeholder='re-enter password'/>
+          <button type='submit' className='authButton'>Register</button>
           <button type='button' className='loginRegisterSwitch'>Already have an account? login here.</button>
         </AuthCard>
       </body>
