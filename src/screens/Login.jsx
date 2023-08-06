@@ -9,7 +9,12 @@ function Login() {
       <AuthHeader/>
       <body className='authBody'>
         <AuthCard>
-
+          <label htmlFor='loginEmail'>Email</label>
+          <input type='email' id='loginEmail' placeholder='youremail@website.com'></input>
+          <label htmlFor='loginPassword'>Password</label>
+          <input type='password' id='loginPassword' placeholder='password'></input>
+          <button type='submit' className='authSubmit'>Login</button>
+          <button type='button' className='loginRegisterSwitch'>Don't have an account? register here.</button>
         </AuthCard>
       </body>
     </Background>
