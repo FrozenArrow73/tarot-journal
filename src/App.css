@@ -85,10 +85,7 @@
 
 .loginRegisterSwitch {
   background-color: rgba(0, 0, 0, 0);
-  border-bottom: none;
-  border-left: none;
-  border-right: none;
-  border-top: none;
+  border: none;
 }
 
 .loginRegisterSwitch:hover {
