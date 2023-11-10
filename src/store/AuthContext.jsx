@@ -1,12 +1,18 @@
 import { createContext } from "react";
 
 const AuthContext = createContext({
-    test: "test unsuccessfull"
+    authenticate: () => {}
 })
+
+const authenticate = () => {
+    //get the token from local storage
+    //authenticate token from local storage by useing an axios call to the server
+    return true
+}
 
 export const AuthContextProvider = (props) => {
     const contextValue = {
-        test: "test successfull"
+        authenticate
     }
 
     return (
