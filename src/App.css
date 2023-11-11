@@ -92,3 +92,23 @@
   border-bottom: solid;
   cursor: pointer;
 }
+
+.decksBody {
+  min-height: calc(100vh - 100px);
+  height: auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+}
+.decksNav {
+  width: 150px;
+  height: auto;
+  border: solid;
+}
+.decksList {
+  width: calc(100% - 250px);
+  height: auto;
+  border: solid;
+}
