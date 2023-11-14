@@ -4,3 +4,6 @@
   box-sizing: border-box;
   color: #D6D5C9;
 }
+input {
+  color: black;
+}
