@@ -2,7 +2,7 @@ import React from 'react'
 
 function AuthCard(props) {
   return (
-    <form className='authCard'>{props.children}</form>
+    <form className='authCard' onSubmit={props.handleSubmit}>{props.children}</form>
   )
 }
 

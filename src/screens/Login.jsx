@@ -10,16 +10,20 @@ function Login() {
   const handleLoginRegisterSwitch = () => {
     navigate("/register")
   }
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    navigate("/decks")
+  }
   return (
     <Background>
       <AuthHeader/>
       <body className='authBody'>
-        <AuthCard>
+        <AuthCard handleSubmit={handleSubmit}>
           <label htmlFor='loginEmail'>Email</label>
           <input type='email' id='loginEmail' placeholder='youremail@website.com'></input>
           <label htmlFor='loginPassword'>Password</label>
           <input type='password' id='loginPassword' placeholder='password'></input>
-          <button type='submit' className='authButton'>Login</button>
+          <button type='submit' className='authButton' >Login</button>
           <button type='button' className='loginRegisterSwitch' onClick={handleLoginRegisterSwitch}>Don't have an account? register here.</button>
         </AuthCard>
       </body>
