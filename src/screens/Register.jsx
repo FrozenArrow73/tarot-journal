@@ -94,7 +94,6 @@ function Register() {
       setPasswordLength(false)
       allTestsPass = false
     }
-    console.log(allTestsPass + "value at end")
     setEmail("")
     setPassword1("")
     setPassword2("")
@@ -105,7 +104,7 @@ function Register() {
   return (
     <Background>
       <AuthHeader/>
-      <body className='authBody'>
+      <div className='authBody'>
         <AuthCard handleSubmit={handleSubmit}>
           <label htmlFor='registerEmail'>Email</label>
           <input type='email' id='registerEmail' value={email} onChange={handleUpdateEmail} placeholder='youremail@website.com'></input>
@@ -113,18 +112,19 @@ function Register() {
           <input type='password' id='registerPassword'value={password1} onChange={handleUpdatePassword1} placeholder='password'></input>
           <label htmlFor="reenterPassword">Re-enter Password</label>
           <input type="password" id="reenterPassword" value={password2} onChange={handleUpdatePassword2} placeholder='re-enter password'/>
-          {allfieldsFilled ? "" : <p className='RegistrationError'>All inputs must be filled in</p>}
-          {passwordsMatch ? "" : <p className='RegistrationError'>Passwords must match</p>}
-          {passwordLength ? "" : <p className='RegistrationError'>Password must be at least 8 characters long</p>}
-          {passwordLowerLetter ? "" : <p className='RegistrationError'>Password must include a lowercase letter</p>}
-          {passwordUpperLetter ? "" : <p className='RegistrationError'>Password must include an uppercase letter</p>}
-          {passwordNumber ? "" : <p className='RegistrationError'>Passwords must include a number</p>}
-          {passwordSymbol ? "" : <p className='RegistrationError'>Passwords must include one of these symbols: !@#$%^&*-_=+.,?</p>}
-
+          <div className='registrationErrorBox'>
+            {allfieldsFilled ? "" : <p className='registrationError'>All inputs must be filled in</p>}
+            {passwordsMatch ? "" : <p className='registrationError'>Passwords must match</p>}
+            {passwordLength ? "" : <p className='registrationError'>Password must be at least 8 characters long</p>}
+            {passwordLowerLetter ? "" : <p className='registrationError'>Password must include a lowercase letter</p>}
+            {passwordUpperLetter ? "" : <p className='registrationError'>Password must include an uppercase letter</p>}
+            {passwordNumber ? "" : <p className='registrationError'>Passwords must include a number</p>}
+            {passwordSymbol ? "" : <p className='registrationError'>Passwords must include one of these symbols: !@#$%^&*-_=+.,?</p>}
+          </div>
           <button type='submit' className='authButton'>Register</button>
           <button type='button' className='loginRegisterSwitch' onClick={handleLoginRegisterSwitch}>Already have an account? login here.</button>
         </AuthCard>
-      </body>
+      </div>
     </Background>
   )
 }
