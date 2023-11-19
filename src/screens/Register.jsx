@@ -31,17 +31,75 @@ function Register() {
   }
   const handleSubmit = (event) => {
     event.preventDefault()
+    const includesLower = /(?=.*[a-z])/
+    const includesUpper = /(?=.*[A-Z])/
+    const includesNumber = /(?=.*\d)/
+    const includesSymbol = /(?=.*[!@#$%^&*-_=+.,?])/
+    const lengthIsAtLeast8 = /(\w{3,})/
+    let allTestsPass = false
     if (email && password1 && password2) {
-      if (email.includes(".")) {
-      setEmail("")
-      setPassword1("")
-      setPassword2("")
+      setAllFieldsFilled(true)
+      allTestsPass = true
+    }
+    if (password1 === password2) {
+      setPasswordsMatch(true)
+      allTestsPass = true
+    }
+    if (includesLower.test(password1)) {
+      SetPasswordLowerLetter(true)
+      allTestsPass = true
+    }
+    if (includesUpper.test(password1)) {
+      SetPasswordUpperLetter(true)
+      allTestsPass = true
+    }
+    if (includesNumber.test(password1)) {
+      setPasswordNumber(true)
+      allTestsPass = true
+    }
+    if (includesSymbol.test(password1)) {
+      setPasswordContainsSymbol(true)
+      allTestsPass = true
+    }
+    if (lengthIsAtLeast8.test(password1)) {
+      setPasswordLength(true)
+      allTestsPass = true
+    }
+    // opposite
+    if (!(email && password1 && password2)) {
+      setAllFieldsFilled(false)
+      allTestsPass = false
+    }
+    if (password1 !== password2) {
+      setPasswordsMatch(false)
+      allTestsPass = false
+    }
+    if (!includesLower.test(password1)) {
+      SetPasswordLowerLetter(false)
+      allTestsPass = false
+    }
+    if (!includesUpper.test(password1)) {
+      SetPasswordUpperLetter(false)
+      allTestsPass = false
+    }
+    if (!includesNumber.test(password1)) {
+      setPasswordNumber(false)
+      allTestsPass = false
+    }
+    if (!includesSymbol.test(password1)) {
+      setPasswordContainsSymbol(false)
+      allTestsPass = false
+    }
+    if (!lengthIsAtLeast8.test(password1)) {
+      setPasswordLength(false)
+      allTestsPass = false
+    }
+    console.log(allTestsPass + "value at end")
+    setEmail("")
+    setPassword1("")
+    setPassword2("")
+    if(allTestsPass) {
       navigate("/decks")
-      }
-    } else{
-      setEmail("")
-      setPassword1("")
-      setPassword2("")
     }
   }
   return (
@@ -61,7 +119,7 @@ function Register() {
           {passwordLowerLetter ? "" : <p className='RegistrationError'>Password must include a lowercase letter</p>}
           {passwordUpperLetter ? "" : <p className='RegistrationError'>Password must include an uppercase letter</p>}
           {passwordNumber ? "" : <p className='RegistrationError'>Passwords must include a number</p>}
-          {passwordSymbol ? "" : <p className='RegistrationError'>Passwords must include one of these symbols: !@#)$%^&*(</p>}
+          {passwordSymbol ? "" : <p className='RegistrationError'>Passwords must include one of these symbols: !@#$%^&*-_=+.,?</p>}
 
           <button type='submit' className='authButton'>Register</button>
           <button type='button' className='loginRegisterSwitch' onClick={handleLoginRegisterSwitch}>Already have an account? login here.</button>
