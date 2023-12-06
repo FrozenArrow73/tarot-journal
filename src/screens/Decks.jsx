@@ -3,19 +3,19 @@ import Background from '../components/Background'
 import Header from '../components/Header'
 
 function Decks() {
-  const raiderWaite = {
-    name: "Raider Waite",
+  const riderWaite = {
+    name: "Rider Waite",
     image: "https://gfx.tarot.com/images/site/decks/rider/mid_size/1.jpg"
   }
-  const decks = [raiderWaite]
+  const decks = [riderWaite]
   const deckDisplay = decks.map((deck, index) => {
 
     return (
-      <div>
-        <div>
-          <img src = {deck.image} alt={deck.name + " Image"}></img>
+      <div className='deckContainer'>
+        <div className='deckCard'>
+          <img className='deckImg' src = {deck.image} alt={deck.name + " Image"}></img>
         </div>
-        <p>
+        <p className='deckName'>
           {deck.name}
         </p>
       </div>

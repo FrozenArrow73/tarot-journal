@@ -130,9 +130,17 @@
   padding: 15px;
 }
 .decksList {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  row-gap: 20px;
   width: calc(100% - 200px);
   height: auto;
   border: solid;
+  padding: 10px;
 }
 .registrationErrorBox {
   display: flex;
@@ -152,4 +160,30 @@
   animation-duration: 0.25s;
 
   color: red;
+}
+
+.deckCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 75px;
+  height: 110px;
+  padding: 5px;
+  border: solid;
+}
+.deckImg {
+  max-width: 100%;
+  max-height: 100%;
+}
+.deckContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: min-content;
+  
+}
+.deckName {
+  font-size: 12px;
 }
