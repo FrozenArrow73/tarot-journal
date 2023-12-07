@@ -34,6 +34,14 @@ function Decks() {
             </nav>
             <div className='decksList'>
               {deckDisplay}
+              <div className='deckContainer'>
+                <div className='deckCard'>
+                  <div className='plus'>
+                    +
+                  </div>
+                </div>
+                <p className='deckName'>Add Deck</p>
+              </div>
             </div>
         </body>
     </Background>
