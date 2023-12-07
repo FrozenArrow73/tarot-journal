@@ -190,3 +190,12 @@
 .plus {
   font-size: 50px;
 }
+.deckContainer:hover {
+  cursor: pointer;
+  border-color: #B9BAA3;
+  color: #B9BAA3;
+  text-shadow: 0 0 5px currentColor;
+}
+.deckCard:hover{
+  box-shadow: 0 0 5px 0px #B9BAA3;
+}
