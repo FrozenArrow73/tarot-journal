@@ -17,7 +17,7 @@ function Login() {
   return (
     <Background>
       <AuthHeader/>
-      <body className='authBody'>
+      <div className='authBody'>
         <AuthCard handleSubmit={handleSubmit}>
           <label htmlFor='loginEmail'>Email</label>
           <input type='email' id='loginEmail' placeholder='youremail@website.com'></input>
@@ -26,7 +26,7 @@ function Login() {
           <button type='submit' className='authButton' >Login</button>
           <button type='button' className='loginRegisterSwitch' onClick={handleLoginRegisterSwitch}>Don't have an account? register here.</button>
         </AuthCard>
-      </body>
+      </div>
     </Background>
   )
 }

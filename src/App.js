@@ -5,6 +5,7 @@ import Login from "./screens/Login"
 import Register from "./screens/Register"
 import Decks from "./screens/Decks"
 import PrivateRoutes from './utils/PrivateRoutes';
+import Cards from './screens/Cards';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/register" element={<Register/>}/>
         <Route element ={<PrivateRoutes/>}>
           <Route path='/decks' element={<Decks/>}/>
+          <Route path='/decks/:id' element={<Cards/>}/>
         </Route>
       </Routes>
     </div>

@@ -1,21 +1,27 @@
 import React from 'react'
 import Background from '../components/Background'
 import Header from '../components/Header'
+import { useNavigate } from 'react-router-dom'
 
 function Decks() {
   const riderWaite = {
+    id: 1,
     name: "Rider Waite",
     image: "https://gfx.tarot.com/images/site/decks/rider/mid_size/1.jpg"
   }
   const decks = [riderWaite]
+  const navigate = useNavigate()
+  const handleCardsClick = (event) => {
+    navigate("/decks/" + event.target.id)
+  }
   const deckDisplay = decks.map((deck, index) => {
 
     return (
-      <div className='deckContainer'>
-        <div className='deckCard'>
-          <img className='deckImg' src = {deck.image} alt={deck.name + " Image"}></img>
+      <div className='deckContainer' onClick={handleCardsClick} key={deck.id} id={deck.id}>
+        <div className='deckCard' id={deck.id}>
+          <img className='deckImg' src = {deck.image} alt={deck.name + " Image"} id={deck.id}></img>
         </div>
-        <p className='deckName'>
+        <p className='deckName' id={deck.id}>
           {deck.name}
         </p>
       </div>
@@ -25,7 +31,7 @@ function Decks() {
   return (
     <Background>
         <Header/>
-        <body className='decksBody'>
+        <div className='decksBody'>
             <nav className='decksNav'>
                 <button className='defaultButton'>Record Reading</button>
                 <button className='defaultButton'>Auto Reading</button>
@@ -43,7 +49,7 @@ function Decks() {
                 <p className='deckName'>Add Deck</p>
               </div>
             </div>
-        </body>
+        </div>
     </Background>
   )
 }
