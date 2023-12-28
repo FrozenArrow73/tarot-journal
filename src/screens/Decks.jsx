@@ -12,7 +12,7 @@ function Decks() {
   const decks = [riderWaite]
   const navigate = useNavigate()
   const handleCardsClick = (event) => {
-    navigate("/decks/" + event.target.id)
+    navigate("/decks/cards/" + event.target.id)
   }
   const deckDisplay = decks.map((deck, index) => {
 
@@ -28,6 +28,9 @@ function Decks() {
     )
 
   })
+  const handleAddDeck = (event) => {
+    navigate("/decks/addDeck")
+  }
   return (
     <Background>
         <Header/>
@@ -40,7 +43,7 @@ function Decks() {
             </nav>
             <div className='decksList'>
               {deckDisplay}
-              <div className='deckContainer'>
+              <div className='deckContainer' onClick={handleAddDeck}>
                 <div className='deckCard'>
                   <div className='plus'>
                     +
